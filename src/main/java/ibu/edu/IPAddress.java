@@ -16,6 +16,7 @@ public class IPAddress implements Comparable<IPAddress>{
         this.regionName = regionName;
         this.cityName = cityName;
     }
+
     @Override
     public int compareTo(IPAddress that) {
         if(this.ipFrom > that.ipFrom){
@@ -28,6 +29,7 @@ public class IPAddress implements Comparable<IPAddress>{
             return 0;
         }
     }
+
     public String toString(){
         return ("ipFrom - " + ipFrom + " / ipTo - " + ipTo + " / countryCode - " + countryCode + " / countryName - " + countryName + " / regionName - " + regionName + " / cityName - " + cityName);
     }
