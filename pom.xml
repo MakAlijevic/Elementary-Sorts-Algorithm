@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ibu.edu</groupId>
-  <artifactId>Elementary Sorts on Complex Data</artifactId>
+  <artifactId>elementary-sorts-on-complex-data</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>Elementary Sorts on Complex Data</name>
