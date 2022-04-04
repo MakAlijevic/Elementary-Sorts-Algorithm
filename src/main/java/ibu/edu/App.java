@@ -50,6 +50,7 @@ public class App
         //sort
         SelectionSort.sort(ipAddressesSelection);
         //sort
+        InsertionSort.sort(ipAddressesInsertion);
         //sort
 
 
@@ -57,14 +58,16 @@ public class App
             selectionFileWriter.write("\"" + ipAddressesSelection[a].ipFrom + "\"," + "\"" + ipAddressesSelection[a].ipTo + "\"," + "\"" + ipAddressesSelection[a].countryCode + "\"," + "\"" + ipAddressesSelection[a].countryName + "\"," + "\"" + ipAddressesSelection[a].regionName + "\"," + "\"" + ipAddressesSelection[a].cityName + "\n");
         }
         selectionFileWriter.close();
+        System.out.println("Selection sort completed!");
 
-        /**for(int b = 0; a < ipAddressesInsertion.length; b++){
-            insertionFileWriter.write("\"" + ipAddressesInsertion[a].ipFrom + "\"," + "\"" + ipAddressesInsertion[a].ipTo + "\"," + "\"" + ipAddressesInsertion[a].countryCode + "\"," + "\"" + ipAddressesInsertion[a].countryName + "\"," + "\"" + ipAddressesInsertion[a].regionName + "\"," + "\"" + ipAddressesInsertion[a].cityName + "\n");
+        for(int b = 0; b < ipAddressesInsertion.length; b++){
+            insertionFileWriter.write("\"" + ipAddressesInsertion[b].ipFrom + "\"," + "\"" + ipAddressesInsertion[b].ipTo + "\"," + "\"" + ipAddressesInsertion[b].countryCode + "\"," + "\"" + ipAddressesInsertion[b].countryName + "\"," + "\"" + ipAddressesInsertion[b].regionName + "\"," + "\"" + ipAddressesInsertion[b].cityName + "\n");
         }
         insertionFileWriter.close();
+        System.out.println("Insertion sort completed");
 
-        for(int c = 0; a < ipAddressesShell.length; c++){
-            shellFileWriter.write("\"" + ipAddressesShell[a].ipFrom + "\"," + "\"" + ipAddressesShell[a].ipTo + "\"," + "\"" + ipAddressesShell[a].countryCode + "\"," + "\"" + ipAddressesShell[a].countryName + "\"," + "\"" + ipAddressesShell[a].regionName + "\"," + "\"" + ipAddressesShell[a].cityName + "\n");
+        /**for(int c = 0; c < ipAddressesShell.length; c++){
+           shellFileWriter.write("\"" + ipAddressesShell[c].ipFrom + "\"," + "\"" + ipAddressesShell[c].ipTo + "\"," + "\"" + ipAddressesShell[c].countryCode + "\"," + "\"" + ipAddressesShell[c].countryName + "\"," + "\"" + ipAddressesShell[c].regionName + "\"," + "\"" + ipAddressesShell[c].cityName + "\n");
         }
         shellFileWriter.close();*/
     }
