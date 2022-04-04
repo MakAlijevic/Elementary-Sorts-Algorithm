@@ -26,12 +26,12 @@ public class App
         FileWriter shellFileWriter = new FileWriter(newFileShell);
 
         String[] ips;
-        IPAddress[] ipAddressesSelection = new IPAddress[30];
-        IPAddress[] ipAddressesInsertion = new IPAddress[30];
-        IPAddress[] ipAddressesShell = new IPAddress[30];
+        IPAddress[] ipAddressesSelection = new IPAddress[50];
+        IPAddress[] ipAddressesInsertion = new IPAddress[50];
+        IPAddress[] ipAddressesShell = new IPAddress[50];
 
         int i = 0;
-        while(input.hasNextLine() && i < 30){
+        while(input.hasNextLine() && i < 50){
 
             String data = input.nextLine();
             data = data.replace("\"", "");
@@ -47,28 +47,35 @@ public class App
         }
         input.close();
 
-        //sort
+        //Selection sort
+        long start = System.currentTimeMillis();
         SelectionSort.sort(ipAddressesSelection);
-        //sort
-        InsertionSort.sort(ipAddressesInsertion);
-        //sort
-
 
         for(int a = 0; a < ipAddressesSelection.length; a++){
             selectionFileWriter.write("\"" + ipAddressesSelection[a].ipFrom + "\"," + "\"" + ipAddressesSelection[a].ipTo + "\"," + "\"" + ipAddressesSelection[a].countryCode + "\"," + "\"" + ipAddressesSelection[a].countryName + "\"," + "\"" + ipAddressesSelection[a].regionName + "\"," + "\"" + ipAddressesSelection[a].cityName + "\n");
         }
         selectionFileWriter.close();
-        System.out.println("Selection sort completed!");
+        System.out.println("Selection sort completed! Done in " + (System.currentTimeMillis() - start) + " ms");
+
+        //Insertion sort
+        start = System.currentTimeMillis();
+
+        InsertionSort.sort(ipAddressesInsertion);
 
         for(int b = 0; b < ipAddressesInsertion.length; b++){
             insertionFileWriter.write("\"" + ipAddressesInsertion[b].ipFrom + "\"," + "\"" + ipAddressesInsertion[b].ipTo + "\"," + "\"" + ipAddressesInsertion[b].countryCode + "\"," + "\"" + ipAddressesInsertion[b].countryName + "\"," + "\"" + ipAddressesInsertion[b].regionName + "\"," + "\"" + ipAddressesInsertion[b].cityName + "\n");
         }
         insertionFileWriter.close();
-        System.out.println("Insertion sort completed");
+        System.out.println("Insertion sort completed! Done in " + (System.currentTimeMillis() - start) + " ms");
 
-        /**for(int c = 0; c < ipAddressesShell.length; c++){
+        //Shell sort
+        start = System.currentTimeMillis();
+
+        ShellSort.sort(ipAddressesShell);
+
+        for(int c = 0; c < ipAddressesShell.length; c++){
            shellFileWriter.write("\"" + ipAddressesShell[c].ipFrom + "\"," + "\"" + ipAddressesShell[c].ipTo + "\"," + "\"" + ipAddressesShell[c].countryCode + "\"," + "\"" + ipAddressesShell[c].countryName + "\"," + "\"" + ipAddressesShell[c].regionName + "\"," + "\"" + ipAddressesShell[c].cityName + "\n");
         }
-        shellFileWriter.close();*/
-    }
+        shellFileWriter.close();
+        System.out.println("Shell sort completed! Done in " + (System.currentTimeMillis() - start) + " ms");    }
 }
